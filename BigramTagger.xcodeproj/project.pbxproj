@@ -12,6 +12,12 @@
 		D75A9129232FA857004CFF1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75A9127232FA857004CFF1C /* Main.storyboard */; };
 		D75A912B232FA858004CFF1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D75A912A232FA858004CFF1C /* Assets.xcassets */; };
 		D75A912E232FA858004CFF1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75A912C232FA858004CFF1C /* LaunchScreen.storyboard */; };
+		D75A9136232FA86B004CFF1C /* BigramTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A9135232FA86B004CFF1C /* BigramTagger.swift */; };
+		D75A913A232FA880004CFF1C /* TaggedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A9137232FA880004CFF1C /* TaggedWord.swift */; };
+		D75A913B232FA880004CFF1C /* Tokenizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A9138232FA880004CFF1C /* Tokenizable.swift */; };
+		D75A913C232FA880004CFF1C /* WordPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A9139232FA880004CFF1C /* WordPosition.swift */; };
+		D75A913E232FA888004CFF1C /* BigramTaggerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A913D232FA888004CFF1C /* BigramTaggerDelegate.swift */; };
+		D75A9140232FA8C1004CFF1C /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A913F232FA8C1004CFF1C /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		D75A912A232FA858004CFF1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D75A912D232FA858004CFF1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D75A912F232FA858004CFF1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D75A9135232FA86B004CFF1C /* BigramTagger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigramTagger.swift; sourceTree = "<group>"; };
+		D75A9137232FA880004CFF1C /* TaggedWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaggedWord.swift; sourceTree = "<group>"; };
+		D75A9138232FA880004CFF1C /* Tokenizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizable.swift; sourceTree = "<group>"; };
+		D75A9139232FA880004CFF1C /* WordPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPosition.swift; sourceTree = "<group>"; };
+		D75A913D232FA888004CFF1C /* BigramTaggerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigramTaggerDelegate.swift; sourceTree = "<group>"; };
+		D75A913F232FA8C1004CFF1C /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				D75A9123232FA857004CFF1C /* AppDelegate.swift */,
+				D75A913F232FA8C1004CFF1C /* MockData.swift */,
+				D75A9137232FA880004CFF1C /* TaggedWord.swift */,
+				D75A9138232FA880004CFF1C /* Tokenizable.swift */,
+				D75A9139232FA880004CFF1C /* WordPosition.swift */,
+				D75A913D232FA888004CFF1C /* BigramTaggerDelegate.swift */,
+				D75A9135232FA86B004CFF1C /* BigramTagger.swift */,
 				D75A9125232FA857004CFF1C /* ViewController.swift */,
 				D75A9127232FA857004CFF1C /* Main.storyboard */,
 				D75A912A232FA858004CFF1C /* Assets.xcassets */,
@@ -135,8 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D75A913C232FA880004CFF1C /* WordPosition.swift in Sources */,
+				D75A913B232FA880004CFF1C /* Tokenizable.swift in Sources */,
+				D75A913E232FA888004CFF1C /* BigramTaggerDelegate.swift in Sources */,
 				D75A9126232FA857004CFF1C /* ViewController.swift in Sources */,
+				D75A9136232FA86B004CFF1C /* BigramTagger.swift in Sources */,
+				D75A9140232FA8C1004CFF1C /* MockData.swift in Sources */,
 				D75A9124232FA857004CFF1C /* AppDelegate.swift in Sources */,
+				D75A913A232FA880004CFF1C /* TaggedWord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
