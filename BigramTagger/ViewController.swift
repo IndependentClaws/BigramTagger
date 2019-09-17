@@ -97,12 +97,20 @@ class ViewController: UIViewController, BigramTaggerDelegate{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+       
+        let text = MockData.article1.text
+        let generalNouns = text.getAllNouns()
         
-        //let bigramTagger = BigramTagger(delegate: self)
-       // bigramTagger.tagBigrams(forText: MockData.article1.text)
+        generalNouns.forEach{print($0)}
+
+
+    
+    }
+    
+    func showStatisticsForSimpleNGramTagger(withText text: String){
         
-        let simpleNGramTagger = SimpleNGramTagger(withText: MockData.article1.text)
+        let simpleNGramTagger = SimpleNGramTagger(withText: text)
         let bigrams = simpleNGramTagger.getBigrams()
         let trigrams = simpleNGramTagger.getTrigrams()
         
@@ -136,12 +144,6 @@ class ViewController: UIViewController, BigramTaggerDelegate{
         print("Number of trigrams of type Adjective-Adjective-Noun: \(countAdjAdjN)")
         print("Number of trigrams of type Preposition-Determiner-Noun: \(countPDetN)")
 
-
-        
-
-
-
-    
     }
     
     

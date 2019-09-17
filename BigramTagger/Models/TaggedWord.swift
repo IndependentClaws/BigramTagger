@@ -28,7 +28,7 @@ struct TaggedWord: Tokenizable, CustomStringConvertible,Hashable{
     
     static let ProperNounSet: Set<NLTag> = [.placeName,.organizationName,.personalName]
     
-    static let PersonalIndirectObjectPronouns: Set<String> = ["him","her","me","us","them","you","it"]
+    static let IndirectObjectPronouns: Set<String> = ["him","her","me","us","them","you","it"]
     
     static let DemonstrativePronouns: Set<String> = ["this","that","these","those"]
     
@@ -45,7 +45,7 @@ struct TaggedWord: Tokenizable, CustomStringConvertible,Hashable{
     var word: String
     
     var tag: NLTag
-    var wordPosition: WordPosition?
+    var wordPosition: Int?
     
     init(){
         self.word = String()
@@ -106,11 +106,6 @@ struct TaggedWord: Tokenizable, CustomStringConvertible,Hashable{
     }
     
     
-    
-    func isPersonalIndirectObjectPronoun() -> Bool{
-        return TaggedWord.PersonalIndirectObjectPronouns.contains(self.tag.rawValue.lowercased())
-    }
-    
     func isPronoun() -> Bool{
         return tag == .pronoun
     }
@@ -132,6 +127,19 @@ struct TaggedWord: Tokenizable, CustomStringConvertible,Hashable{
     }
     
     
+    func isIndirectObjectPronoun() -> Bool{
+        return TaggedWord.IndirectObjectPronouns.contains(self.tag.rawValue.lowercased())
+    }
+    
+    func isDemonstrativePronoun() -> Bool{
+        return TaggedWord.DemonstrativePronouns.contains(self.tag.rawValue.lowercased())
+    }
+    
+    func isPossessivePronoun() -> Bool{
+        return TaggedWord.PossessivePronouns.contains(self.tag.rawValue.lowercased())
+    }
+
+
     
     
 }
