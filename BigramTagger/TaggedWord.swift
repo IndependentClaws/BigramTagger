@@ -47,6 +47,11 @@ struct TaggedWord: Tokenizable, CustomStringConvertible,Hashable{
     var tag: NLTag
     var wordPosition: WordPosition?
     
+    init(){
+        self.word = String()
+        self.tag = NLTag.other
+    }
+    
     init(word: String, tag: NLTag) {
         self.word = word
         self.tag = tag

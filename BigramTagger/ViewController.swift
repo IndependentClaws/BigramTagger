@@ -99,9 +99,48 @@ class ViewController: UIViewController, BigramTaggerDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let bigramTagger = BigramTagger(delegate: self)
-        bigramTagger.tagBigrams(forText: MockData.article1.text)
+        //let bigramTagger = BigramTagger(delegate: self)
+       // bigramTagger.tagBigrams(forText: MockData.article1.text)
         
+        let simpleNGramTagger = SimpleNGramTagger(withText: MockData.article1.text)
+        let bigrams = simpleNGramTagger.getBigrams()
+        let trigrams = simpleNGramTagger.getTrigrams()
+        
+        bigrams.forEach{
+            print("Bigram: \($0.n1) \($0.n2)")
+        }
+        
+        trigrams.forEach{
+            print("Trigram: \($0.n1) \($0.n2) \($0.n3)")
+        }
+        
+        
+        let countNV = simpleNGramTagger.numberOfBigrams(withTagPattern: [.noun,.verb])
+        let countVN = simpleNGramTagger.numberOfBigrams(withTagPattern: [.verb,.noun])
+        let countDetN = simpleNGramTagger.numberOfBigrams(withTagPattern: [.determiner,.noun])
+        let countPN = simpleNGramTagger.numberOfBigrams(withTagPattern: [.preposition,.noun])
+        
+        print("Number of bigrams of type Noun-Verb: \(countNV)")
+        print("Number of bigrams of type Verb-Noun: \(countVN)")
+        print("Number of bigrams of type Determiner-Noun: \(countDetN)")
+        print("Number of bigrams of type Preposition-Noun: \(countPN)")
+        
+        
+        let countNVN = simpleNGramTagger.numberOfTrigrams(withTagPattern: [.noun,.verb,.noun])
+        let countDetAdjN = simpleNGramTagger.numberOfTrigrams(withTagPattern: [.determiner,.adjective,.noun])
+        let countAdjAdjN = simpleNGramTagger.numberOfTrigrams(withTagPattern: [.adjective,.adjective,.noun])
+        let countPDetN = simpleNGramTagger.numberOfTrigrams(withTagPattern: [.preposition,.determiner,.noun])
+        
+        print("Number of trigrams of type Noun-Verb-Noun: \(countNVN)")
+        print("Number of trigrams of type Determiner-Adjective-Noun: \(countDetAdjN)")
+        print("Number of trigrams of type Adjective-Adjective-Noun: \(countAdjAdjN)")
+        print("Number of trigrams of type Preposition-Determiner-Noun: \(countPDetN)")
+
+
+        
+
+
+
     
     }
     

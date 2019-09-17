@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D72417092330AA4300695456 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72417082330AA4300695456 /* String+Extensions.swift */; };
+		D72417142330AE1900695456 /* SimpleBigramTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72417132330AE1900695456 /* SimpleBigramTagger.swift */; };
 		D75A9124232FA857004CFF1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A9123232FA857004CFF1C /* AppDelegate.swift */; };
 		D75A9126232FA857004CFF1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A9125232FA857004CFF1C /* ViewController.swift */; };
 		D75A9129232FA857004CFF1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75A9127232FA857004CFF1C /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D72417082330AA4300695456 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		D72417132330AE1900695456 /* SimpleBigramTagger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBigramTagger.swift; sourceTree = "<group>"; };
 		D75A9120232FA857004CFF1C /* BigramTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigramTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75A9123232FA857004CFF1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75A9125232FA857004CFF1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D72417122330AE0300695456 /* BigramTaggers */ = {
+			isa = PBXGroup;
+			children = (
+				D75A913D232FA888004CFF1C /* BigramTaggerDelegate.swift */,
+				D75A9135232FA86B004CFF1C /* BigramTagger.swift */,
+				D72417132330AE1900695456 /* SimpleBigramTagger.swift */,
+			);
+			path = BigramTaggers;
+			sourceTree = "<group>";
+		};
 		D75A9117232FA857004CFF1C = {
 			isa = PBXGroup;
 			children = (
@@ -67,12 +81,12 @@
 			isa = PBXGroup;
 			children = (
 				D75A9123232FA857004CFF1C /* AppDelegate.swift */,
+				D72417082330AA4300695456 /* String+Extensions.swift */,
 				D75A913F232FA8C1004CFF1C /* MockData.swift */,
 				D75A9137232FA880004CFF1C /* TaggedWord.swift */,
 				D75A9138232FA880004CFF1C /* Tokenizable.swift */,
 				D75A9139232FA880004CFF1C /* WordPosition.swift */,
-				D75A913D232FA888004CFF1C /* BigramTaggerDelegate.swift */,
-				D75A9135232FA86B004CFF1C /* BigramTagger.swift */,
+				D72417122330AE0300695456 /* BigramTaggers */,
 				D75A9125232FA857004CFF1C /* ViewController.swift */,
 				D75A9127232FA857004CFF1C /* Main.storyboard */,
 				D75A912A232FA858004CFF1C /* Assets.xcassets */,
@@ -158,8 +172,10 @@
 				D75A913E232FA888004CFF1C /* BigramTaggerDelegate.swift in Sources */,
 				D75A9126232FA857004CFF1C /* ViewController.swift in Sources */,
 				D75A9136232FA86B004CFF1C /* BigramTagger.swift in Sources */,
+				D72417092330AA4300695456 /* String+Extensions.swift in Sources */,
 				D75A9140232FA8C1004CFF1C /* MockData.swift in Sources */,
 				D75A9124232FA857004CFF1C /* AppDelegate.swift in Sources */,
+				D72417142330AE1900695456 /* SimpleBigramTagger.swift in Sources */,
 				D75A913A232FA880004CFF1C /* TaggedWord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
