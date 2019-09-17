@@ -100,11 +100,15 @@ class ViewController: UIViewController, BigramTaggerDelegate{
        
        
         let text = MockData.article1.text
-        let generalNouns = text.getAllNouns()
         
-        generalNouns.forEach{print($0)}
-
-
+        print("Top low frequency noun words")
+        let lowFrequencyWords = text.getBottomNLowFrequencyWords(n: 5, ofTagType: .noun)
+        lowFrequencyWords.forEach{print($0)}
+        
+        print("Top high frequency noun words")
+        let highFrequencyWords = text.getTopNHighFrequencyWords(n: 5, ofTagType: .noun)
+        
+        highFrequencyWords.forEach{print($0)}
     
     }
     

@@ -17,6 +17,9 @@
 		D72417262330C3CE00695456 /* WordLemma.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72417252330C3CE00695456 /* WordLemma.swift */; };
 		D724172C2330C40200695456 /* BaseTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724172A2330C40200695456 /* BaseTagger.swift */; };
 		D724172D2330C40200695456 /* LemmaTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724172B2330C40200695456 /* LemmaTagger.swift */; };
+		D72417312330CC6C00695456 /* SimpleFrequencyDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724172E2330CC6B00695456 /* SimpleFrequencyDistribution.swift */; };
+		D72417322330CC6C00695456 /* SortedFreqDist.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724172F2330CC6C00695456 /* SortedFreqDist.swift */; };
+		D72417352330CCA100695456 /* WordFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72417342330CCA100695456 /* WordFrequency.swift */; };
 		D75A9124232FA857004CFF1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A9123232FA857004CFF1C /* AppDelegate.swift */; };
 		D75A9126232FA857004CFF1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75A9125232FA857004CFF1C /* ViewController.swift */; };
 		D75A9129232FA857004CFF1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75A9127232FA857004CFF1C /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 		D72417252330C3CE00695456 /* WordLemma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLemma.swift; sourceTree = "<group>"; };
 		D724172A2330C40200695456 /* BaseTagger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTagger.swift; sourceTree = "<group>"; };
 		D724172B2330C40200695456 /* LemmaTagger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LemmaTagger.swift; sourceTree = "<group>"; };
+		D724172E2330CC6B00695456 /* SimpleFrequencyDistribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleFrequencyDistribution.swift; sourceTree = "<group>"; };
+		D724172F2330CC6C00695456 /* SortedFreqDist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedFreqDist.swift; sourceTree = "<group>"; };
+		D72417342330CCA100695456 /* WordFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordFrequency.swift; sourceTree = "<group>"; };
 		D75A9120232FA857004CFF1C /* BigramTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigramTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75A9123232FA857004CFF1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75A9125232FA857004CFF1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 		D72417272330C3D900695456 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D72417342330CCA100695456 /* WordFrequency.swift */,
 				D75A9137232FA880004CFF1C /* TaggedWord.swift */,
 				D72417252330C3CE00695456 /* WordLemma.swift */,
 				D75A9139232FA880004CFF1C /* WordPosition.swift */,
@@ -115,6 +122,15 @@
 				D72417082330AA4300695456 /* String+Extensions.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		D72417362330CCD700695456 /* FrequencyDistribution */ = {
+			isa = PBXGroup;
+			children = (
+				D724172E2330CC6B00695456 /* SimpleFrequencyDistribution.swift */,
+				D724172F2330CC6C00695456 /* SortedFreqDist.swift */,
+			);
+			path = FrequencyDistribution;
 			sourceTree = "<group>";
 		};
 		D75A9117232FA857004CFF1C = {
@@ -139,6 +155,7 @@
 				D75A9123232FA857004CFF1C /* AppDelegate.swift */,
 				D72417292330C3F100695456 /* Utility */,
 				D75A913F232FA8C1004CFF1C /* MockData.swift */,
+				D72417362330CCD700695456 /* FrequencyDistribution */,
 				D72417282330C3E800695456 /* Protocols */,
 				D72417272330C3D900695456 /* Models */,
 				D72417232330C1FF00695456 /* Tokenizrs */,
@@ -225,11 +242,13 @@
 			files = (
 				D72417242330C27D00695456 /* BaseTokenizer.swift in Sources */,
 				D75A913C232FA880004CFF1C /* WordPosition.swift in Sources */,
+				D72417322330CC6C00695456 /* SortedFreqDist.swift in Sources */,
 				D72417262330C3CE00695456 /* WordLemma.swift in Sources */,
 				D75A913B232FA880004CFF1C /* Tokenizable.swift in Sources */,
 				D75A913E232FA888004CFF1C /* BigramTaggerDelegate.swift in Sources */,
 				D72417212330C1FC00695456 /* WordTokenizer.swift in Sources */,
 				D75A9126232FA857004CFF1C /* ViewController.swift in Sources */,
+				D72417352330CCA100695456 /* WordFrequency.swift in Sources */,
 				D75A9136232FA86B004CFF1C /* BigramTagger.swift in Sources */,
 				D72417092330AA4300695456 /* String+Extensions.swift in Sources */,
 				D724171F2330C1FC00695456 /* SentenceTokenizer.swift in Sources */,
@@ -240,6 +259,7 @@
 				D75A913A232FA880004CFF1C /* TaggedWord.swift in Sources */,
 				D724171A2330C08100695456 /* POSTagger.swift in Sources */,
 				D72417202330C1FC00695456 /* ParagraphTokenizer.swift in Sources */,
+				D72417312330CC6C00695456 /* SimpleFrequencyDistribution.swift in Sources */,
 				D724172C2330C40200695456 /* BaseTagger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

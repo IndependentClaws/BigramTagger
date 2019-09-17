@@ -9,13 +9,88 @@
 import Foundation
 import NaturalLanguage
 
-extension String{
+extension String: Tokenizable{
+    
+    var wordToken: String{
+        return self
+    }
     
     typealias Bigram = (n1: TaggedWord,n2:TaggedWord)
     typealias Trigram = (n1: TaggedWord,n2:TaggedWord,n3:TaggedWord)
     
     //MARK ********************************
 
+    struct LinguisticInfo: Codable{
+        let text: String
+        let numberOfNouns: Int
+        let numberOfVerbs: Int
+
+    }
+    
+    //MARK ********************************
+    
+    func getTopNHighFrequencyWords(n: Int, ofTagType tag: NLTag) -> [String]{
+      
+        let taggedWords = self.getAllWords(withTag: tag)
+        let freqDist = SortableFrequencyDistribution(wordTokens: taggedWords)
+        return freqDist.topWordFrequencies(n: n).map{$0.tokenizable.wordToken}
+        
+    }
+    
+    func getBottomNLowFrequencyWords(n: Int, ofTagType tag: NLTag) -> [String]{
+        
+        let taggedWords = self.getAllWords(withTag: tag)
+        let freqDist = SortableFrequencyDistribution(wordTokens: taggedWords)
+        return freqDist.bottomWordFrequencies(n: n).map{$0.tokenizable.wordToken}
+        
+    }
+    func getTopNHighFrequencyWords(n: Int) -> [String]{
+        let tagger = POSTagger(sampleText: self)
+        let taggedWords = tagger.getTaggedWords()
+        
+        let freqDist = SortableFrequencyDistribution(wordTokens: taggedWords)
+        return freqDist.topWordFrequencies(n: n).map{$0.tokenizable.wordToken}
+        
+    }
+    
+    func getBottomNLowFrequencyWords(n: Int) -> [String]{
+        let tagger = POSTagger(sampleText: self)
+        let taggedWords = tagger.getTaggedWords()
+        
+        let freqDist = SortableFrequencyDistribution(wordTokens: taggedWords)
+        return freqDist.topWordFrequencies(n: n).map{$0.tokenizable.wordToken}
+        
+    }
+    
+    func getAllHapaxLegomena(excludingTagTypes tagTypes: [NLTag]) -> [String]{
+        let tagger = POSTagger(sampleText: self)
+        let taggedWords = tagger.getTaggedWords()
+        
+        let freqDist = SimpleFrequencyDistribution(wordTokens: taggedWords)
+        
+        return freqDist.getAllHapaxLegomena().filter{!tagTypes.contains($0.tag)}.map{$0.wordToken}
+    }
+    
+    func getAllHapaxLegomena(forTagType tagType: NLTag) -> [String]{
+        let tagger = POSTagger(sampleText: self)
+        let taggedWords = tagger.getTaggedWords()
+        
+        let freqDist = SimpleFrequencyDistribution(wordTokens: taggedWords)
+        
+        return freqDist.getAllHapaxLegomena().filter{$0.tag == tagType}.map{$0.wordToken}
+        
+    }
+    func getAllHapaxLegomena() -> [String]{
+        let tokens = self.tokenize()
+        let freqDist = SimpleFrequencyDistribution(wordTokens: tokens)
+        return freqDist.getAllHapaxLegomena()
+        
+    }
+    //MARK ************************
+    
+    func getLinguisticInfo() -> LinguisticInfo{
+        return LinguisticInfo(text: self, numberOfNouns: self.numberOfNouns(), numberOfVerbs: self.numberOfVerbs())
+    }
     
     func getTrigrams(withTagPattern tagPattern: [NLTag]) -> [Trigram]{
         
